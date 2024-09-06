@@ -1,7 +1,9 @@
 import socket
 
-client = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-client.connect(('127.0.0.1',12345))
+client = socket.socket(socket.AF_INET,socket.SOCK_STREAM) # AF_INET is connection through internet and SOCK_STREAM is TCP
+ip = input("IP Address :")
+port = input("Port :")
+client.connect((ip, int(port))) 
 
 while True:
     clt_msg = input('enter msg :')

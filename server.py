@@ -1,7 +1,9 @@
 import socket
-server = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-server.bind(('127.0.0.1',12345))
-server.listen(5)
+server = socket.socket(socket.AF_INET,socket.SOCK_STREAM) # AF_INET is connection through internet and SOCK_STREAM is TCP 
+ip = input("IP Address :")
+port = input("Port :")
+server.bind((ip, int(port))) #ip and port should be same in both client and server
+server.listen()
 
 while True:
     print("server is waiting....")
